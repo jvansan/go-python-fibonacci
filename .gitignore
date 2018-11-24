@@ -1,0 +1,5 @@
+fibonacci.h
+fibonacci.so
+
+*.pyc
+__pycache__
