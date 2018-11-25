@@ -6,7 +6,18 @@
 *8 GB 1600 MHz DDR3*
 
 
-## Results
+## Summary
+
+| *N*  | Python (s) | Go (s) |
+|------|------------|--------|
+|  10  |  0.06      |  0.05  |
+|  20  |  0.06      |  0.06  |
+|  30  |  0.56      |  0.06  |
+|  40  |  54.52     |  0.85  |
+|  50  |  7004.33   | 101.47 |
+
+
+## Larger N Results
 
 `time python fibonacci.py --go 40`
 
@@ -24,4 +35,24 @@ Output:
 ```
 40-th Fibonnaci:        102334155
 python fibonacci.py 40  54.52s user 0.17s system 98% cpu 55.390 total
+```
+
+`time python fibonacci.py --go 50`
+
+Output:
+
+```
+50-th Fibonnaci:        -298632863
+python fibonacci.py --go 50  101.47s user 0.60s system 98% cpu 1:43.11 total
+```
+
+**This is clearly an overflow problem and a reminder to be careful in defining C and Go types.**
+
+`time python fibonacci.py 50`
+
+Output:
+
+```
+50-th Fibonnaci:        12586269025
+python fibonacci.py 50  7004.33s user 33.46s system 61% cpu 3:12:10.30 total
 ```
