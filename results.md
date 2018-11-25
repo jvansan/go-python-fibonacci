@@ -14,7 +14,7 @@
 |  20  |  0.06      |  0.06  |
 |  30  |  0.56      |  0.06  |
 |  40  |  54.52     |  0.85  |
-|  50  |  7004.33   | 101.47 |
+|  50  |  7004.33   | 114.97 |
 
 
 ## Larger N Results
@@ -47,6 +47,14 @@ python fibonacci.py --go 50  101.47s user 0.60s system 98% cpu 1:43.11 total
 ```
 
 **This is clearly an overflow problem and a reminder to be careful in defining C and Go types.**
+
+**Bug fixed**
+
+```
+50-th Fibonnaci:        12586269025
+python fibonacci.py --go 50  114.97s user 0.65s system 96% cpu 1:59.50 total
+```
+
 
 `time python fibonacci.py 50`
 

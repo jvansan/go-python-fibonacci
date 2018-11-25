@@ -1,10 +1,10 @@
 import sys
 
-from ctypes import cdll, c_int
+from ctypes import cdll, c_uint64
 
 lib = cdll.LoadLibrary("./fibonacci.so")
-lib.Fib.argtype = c_int
-lib.Fib.restype = c_int
+lib.Fib.argtype = c_uint64
+lib.Fib.restype = c_uint64
 
 go_fib = lib.Fib
 
@@ -14,7 +14,7 @@ def fib(n):
         return n
     else:
         return fib(n - 1) + fib(n - 2)
- 
+  
 
 if __name__ == "__main__":
     if 3 < len(sys.argv) < 2:
